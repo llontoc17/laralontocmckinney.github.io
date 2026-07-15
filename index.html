@@ -22,37 +22,109 @@
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Product Designer</p>
-      <h1>Designing thoughtful products for complex problems</h1>
-      <p>Welcome to my portfolio! I'm a product designer with 7 years of experience in untangling messy problems and turning them into products people actually enjoy using.</p>
+      <h1>Designing thoughtful products<br>in a complex world</h1>
+      <p>7 years of untangling the messy stuff so users don't have to. Welcome to my portfolio.</p>
     </div>
   </section>
   <section class="wrap">
+    <div class="tag-filter" role="group" aria-label="Filter case studies by tag">
+      <button type="button" class="tag-btn active" data-tag="all">All</button>
+      <button type="button" class="tag-btn" data-tag="product-design">Product design</button>
+      <button type="button" class="tag-btn" data-tag="service-design">Service design</button>
+      <button type="button" class="tag-btn" data-tag="dashboard-design">Dashboard design</button>
+      <button type="button" class="tag-btn" data-tag="data-visualization">Data visualization</button>
+      <button type="button" class="tag-btn" data-tag="project-management">Project management</button>
+      <button type="button" class="tag-btn" data-tag="ai-concept">AI concept</button>
+      <button type="button" class="tag-btn" data-tag="design-system">Design system</button>
+      <button type="button" class="tag-btn" data-tag="design-research">Design research</button>
+      <button type="button" class="tag-btn" data-tag="illustrations">Illustrations</button>
+    </div>
     <div class="projects">
-      <a class="project-card" href="projects/error-management-system.html">
-        <h3>Error management system</h3>
-        <p class="meta">Product design, service design, dashboard design, data visualization &mdash; March 2025</p>
+      <a class="project-card" href="projects/error-management-system.html" data-tags="product-design service-design dashboard-design data-visualization">
+        <div class="project-thumb" aria-hidden="true"></div>
+        <div class="project-info">
+          <h3>Error management system</h3>
+          <p class="date">March 2025</p>
+          <ul class="tags">
+            <li>Product design</li>
+            <li>Service design</li>
+            <li>Dashboard design</li>
+            <li>Data visualization</li>
+          </ul>
+        </div>
       </a>
-      <a class="project-card" href="projects/retirement-education-tool.html">
-        <h3>Retirement education tool</h3>
-        <p class="meta">Product design, project management, AI concept &mdash; April 2026</p>
+      <a class="project-card" href="projects/retirement-education-tool.html" data-tags="product-design project-management ai-concept">
+        <div class="project-thumb" aria-hidden="true"></div>
+        <div class="project-info">
+          <h3>Retirement education tool</h3>
+          <p class="date">April 2026</p>
+          <ul class="tags">
+            <li>Product design</li>
+            <li>Project management</li>
+            <li>AI concept</li>
+          </ul>
+        </div>
       </a>
-      <a class="project-card" href="projects/executive-reporting-dashboard.html">
-        <h3>Executive reporting dashboard</h3>
-        <p class="meta">Product design, design system, data visualization, AI use case &mdash; March 2023</p>
+      <a class="project-card" href="projects/executive-reporting-dashboard.html" data-tags="product-design design-system data-visualization ai-concept">
+        <div class="project-thumb" aria-hidden="true"></div>
+        <div class="project-info">
+          <h3>Executive reporting dashboard</h3>
+          <p class="date">March 2023</p>
+          <ul class="tags">
+            <li>Product design</li>
+            <li>Design system</li>
+            <li>Data visualization</li>
+            <li>AI concept</li>
+          </ul>
+        </div>
       </a>
-      <a class="project-card" href="projects/home-efficiency-rebate-program.html">
-        <h3>Home-efficiency rebate program</h3>
-        <p class="meta">Service design, design research, illustrations &mdash; July 2024</p>
+      <a class="project-card" href="projects/home-efficiency-rebate-program.html" data-tags="service-design design-research illustrations">
+        <div class="project-thumb" aria-hidden="true"></div>
+        <div class="project-info">
+          <h3>Home-efficiency rebate program</h3>
+          <p class="date">July 2024</p>
+          <ul class="tags">
+            <li>Service design</li>
+            <li>Design research</li>
+            <li>Illustrations</li>
+          </ul>
+        </div>
       </a>
     </div>
   </section>
 
   <footer class="site">
     <div class="wrap">
-      <span>&copy; 2026 Lara Lontoc McKinney</span>
+      <span>Last updated July 2026</span>
       <span><a href="http://www.linkedin.com/in/lara-lontoc-mckinney">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="mailto:llontoc17@gmail.com">Email</a></span>
     </div>
   </footer>
 
+  <script>
+    const tagButtons = document.querySelectorAll('.tag-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    const allBtn = document.querySelector('.tag-btn[data-tag="all"]');
+
+    tagButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const scrollY = window.scrollY;
+
+        const tag = btn.dataset.tag;
+        const wasActive = btn.classList.contains('active');
+        tagButtons.forEach((b) => b.classList.remove('active'));
+
+        const nextTag = (tag !== 'all' && wasActive) ? 'all' : tag;
+        (nextTag === 'all' ? allBtn : btn).classList.add('active');
+
+        projectCards.forEach((card) => {
+          const tags = card.dataset.tags.split(' ');
+          card.style.display = (nextTag === 'all' || tags.includes(nextTag)) ? '' : 'none';
+        });
+
+        window.scrollTo(0, scrollY);
+      });
+    });
+  </script>
 </body>
 </html>
