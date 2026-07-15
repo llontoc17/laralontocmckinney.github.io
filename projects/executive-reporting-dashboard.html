@@ -6,7 +6,7 @@
   <title>Executive reporting dashboard — Lara Lontoc McKinney</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="subpage">
   <header class="site">
     <div class="wrap">
       <a class="name" href="../index.html">Lara Lontoc McKinney</a>
@@ -20,16 +20,109 @@
   </header>
 
   <section class="page wrap">
-    <p class="eyebrow">Product design, design system, data visualization, AI use case</p>
-    <h1>Executive reporting dashboard</h1>
-    <p class="meta" style="color:var(--muted)">March 2023</p>
-    <div class="placeholder">Paste the "Executive reporting dashboard" case study text here from Lara_Portfolio_Content.docx, and add project images to the /images folder.</div>
-    <p style="margin-top:32px"><a href="../index.html">&larr; Back to all projects</a></p>
+    <div class="case-header">
+      <h1>Executive reporting dashboard</h1>
+      <p class="eyebrow">Product design, design system, data visualization, AI use case</p>
+      <p class="meta">March 2023</p>
+    </div>
+
+    <h2>Project Summary</h2>
+    <p>The Quick Service Restaurant (QSR) serves more than 70 million customers daily across 39,000 locations in over 100 markets. Despite this scale, executives relied on multiple reports that took weeks to manually compile.</p>
+    <p>Our goal was to create a single source of truth that c-suite executives and market leaders could depend on to analyze business performance.</p>
+    <p>The resulting source of truth dashboard unlocked two key wins for executives: real-time access to performance data, rather than waiting on the QBR cycle, and QBR prep itself — once hours of manual work for executives and their direct reports — reduced to a single export.</p>
+
+    <h2>Highlights</h2>
+    <ul>
+      <li>Reduced Quarterly Business Review (QBR) preparation by 70%</li>
+      <li>Reduced KPI reporting delays from months to 2 days</li>
+      <li>Ranked 1st out of 29 projects in Accenture's Midwest Innovation Challenge</li>
+      <li>Established the company's first internal data visualization patterns</li>
+    </ul>
+
+    <h2>Discovery</h2>
+    <h3>Constraints</h3>
+    <p>Designing for executive leadership came with unique challenges: limited access to users, constantly evolving KPIs, and multiple data sources with different refresh schedules. Research also showed executives primarily used tablets, making a tablet-first experience essential.</p>
+
+    <h3>Proxy research</h3>
+    <p>Because executive interviews were limited, we began with direct reports who prepared leadership reporting, then used those insights to focus our executive sessions. We also audited existing reports to understand workflows, pain points, and how leaders consumed information.</p>
+
+    <h3>What we found</h3>
+    <p>Executives valued seeing the real numbers themselves, not an interpretation of them. What mattered most was confidence in accuracy, so they could apply the data to whatever question was in front of them at the time. Sometimes the high-level KPIs were all they needed; other times, they needed a more detailed breakdown of the metrics behind them. We found they leaned on specific aggregations, like top 10 markets, to support their analysis.</p>
+    <p>We also discovered that while the company had a mature customer-facing design system, there were not yet any UI standards for internal tools or data visualization.</p>
+    <div class="placeholder">Figma synthesis</div>
+
+    <h2>Detailed Design</h2>
+    <h3>Designing for executives</h3>
+    <p>We organized the experience into three levels of detail: an executive summary, visual breakdowns of each KPI, and the ability to download source data.</p>
+    <p>The executive summary gave leaders the whole picture of the business at a glance, across every KPI. Each KPI breakdown showed performance over time, with filters to adjust the view. And to keep that confidence intact at every level, we surfaced the last-updated timestamp and active filters alongside each visualization — so it was always clear exactly what they were looking at: this data, as of this date, at this frequency, in this market.</p>
+    <p>Links to source data added one more layer of reassurance, and gave the few executives who wanted to work directly with the raw numbers a way to do that too.</p>
+    <div class="placeholder">KPI breakdown</div>
+
+    <h3>Identifying an AI use case</h3>
+    <p>While executives wanted to be able to interpret the data themselves, they also liked the idea of a headline — a sentence or two they could quickly check each morning to get an idea of what's changed. This was a great opportunity for an AI-generated summary. Although it ultimately fell outside the project's scope, stakeholders saved the concept for future releases.</p>
+
+    <h3>Expanding the design system</h3>
+    <p>Rather than designing one dashboard, I created a scalable foundation for future internal products. I built an atomic Figma component library with reusable data visualization patterns, accessibility guidance aligned to WCAG AA standards, and standardized usage documentation to help future teams extend the system consistently. These patterns are now used across multiple internal tooling teams.</p>
+
+    <h2>Delivery</h2>
+    <p>In the end, we not only delivered the designs but also a design library and backlog of future enhancement concepts. And the impact was real; the 70% reduction in QBR prep and the jump from months to two days in reporting delays weren't wins in efficiency — they changed how leadership made decisions, day to day instead of quarter to quarter.</p>
+
+    <div class="more-case-studies">
+      <p>More case studies</p>
+      <ul class="related-list">
+        <li>
+          <a class="related-card" href="error-management-system.html">
+            <div class="related-thumb" aria-hidden="true"></div>
+            <div class="related-info">
+              <h3>Error management system</h3>
+              <p class="date">March 2025</p>
+              <ul class="tags">
+                <li>Product design</li>
+                <li>Service design</li>
+                <li>Dashboard design</li>
+                <li>Data visualization</li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="related-card" href="retirement-education-tool.html">
+            <div class="related-thumb" aria-hidden="true"></div>
+            <div class="related-info">
+              <h3>Retirement education tool</h3>
+              <p class="date">April 2026</p>
+              <ul class="tags">
+                <li>Product design</li>
+                <li>Project management</li>
+                <li>AI concept</li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="related-card" href="home-efficiency-rebate-program.html">
+            <div class="related-thumb" aria-hidden="true"></div>
+            <div class="related-info">
+              <h3>Home-efficiency rebate program</h3>
+              <p class="date">July 2024</p>
+              <ul class="tags">
+                <li>Service design</li>
+                <li>Design research</li>
+                <li>Illustrations</li>
+              </ul>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
   </section>
+
+  <p class="back-to-top back-to-projects"><a href="../index.html">&larr; Back to all projects</a></p>
 
   <footer class="site">
     <div class="wrap">
-      <span>&copy; 2026 Lara Lontoc McKinney</span>
+      <span>Last updated July 2026</span>
       <span><a href="http://www.linkedin.com/in/lara-lontoc-mckinney">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="mailto:llontoc17@gmail.com">Email</a></span>
     </div>
   </footer>

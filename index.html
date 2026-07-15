@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site">
+  <header class="site" id="top">
     <div class="wrap">
       <a class="name" href="index.html">Lara Lontoc McKinney</a>
       <nav class="main">
@@ -39,6 +39,7 @@
       <button type="button" class="tag-btn" data-tag="design-research">Design research</button>
       <button type="button" class="tag-btn" data-tag="illustrations">Illustrations</button>
     </div>
+    <p class="filter-count" aria-live="polite"></p>
     <div class="projects">
       <a class="project-card" href="projects/error-management-system.html" data-tags="product-design service-design dashboard-design data-visualization">
         <div class="project-thumb" aria-hidden="true"></div>
@@ -93,6 +94,8 @@
     </div>
   </section>
 
+  <p class="back-to-top"><a href="#top">&uarr; Back to top</a></p>
+
   <footer class="site">
     <div class="wrap">
       <span>Last updated July 2026</span>
@@ -103,8 +106,14 @@
   <script>
     const tagButtons = document.querySelectorAll('.tag-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const filterCount = document.querySelector('.filter-count');
 
     const allBtn = document.querySelector('.tag-btn[data-tag="all"]');
+
+    function updateCount() {
+      const visible = Array.from(projectCards).filter((card) => card.style.display !== 'none').length;
+      filterCount.textContent = `${visible} case ${visible === 1 ? 'study' : 'studies'}`;
+    }
 
     tagButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -122,7 +131,17 @@
           card.style.display = (nextTag === 'all' || tags.includes(nextTag)) ? '' : 'none';
         });
 
+        updateCount();
         window.scrollTo(0, scrollY);
+      });
+    });
+
+    updateCount();
+
+    document.querySelectorAll('a[href="#top"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   </script>

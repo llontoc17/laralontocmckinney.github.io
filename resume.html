@@ -6,8 +6,8 @@
   <title>Resume — Lara Lontoc McKinney</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header class="site">
+<body class="subpage">
+  <header class="site" id="top">
     <div class="wrap">
       <a class="name" href="index.html">Lara Lontoc McKinney</a>
       <nav class="main">
@@ -24,12 +24,22 @@
     <div class="placeholder">Paste your resume content here from Lara_Portfolio_Content.docx.</div>
   </section>
 
+  <p class="back-to-top"><a href="#top">&uarr; Back to top</a></p>
+
   <footer class="site">
     <div class="wrap">
-      <span>&copy; 2026 Lara Lontoc McKinney</span>
+      <span>Last updated July 2026</span>
       <span><a href="http://www.linkedin.com/in/lara-lontoc-mckinney">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="mailto:llontoc17@gmail.com">Email</a></span>
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('a[href="#top"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>

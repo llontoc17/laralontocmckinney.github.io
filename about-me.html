@@ -6,8 +6,8 @@
   <title>About — Lara Lontoc McKinney</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header class="site">
+<body class="subpage">
+  <header class="site" id="top">
     <div class="wrap">
       <a class="name" href="index.html">Lara Lontoc McKinney</a>
       <nav class="main">
@@ -21,15 +21,55 @@
 
   <section class="page wrap">
     <h1>About Me</h1>
-    <div class="placeholder">Paste your about me content here from Lara_Portfolio_Content.docx.</div>
+
+    <p>My experience spans product design, service design, and visual design, with experience leading projects from discovery through delivery in complex, highly regulated industries. I bring structure to ambiguity by aligning user needs, business goals, and operational realities to create solutions that work at both the experience and systems level. I also leverage AI throughout the design process to accelerate research, synthesis, and ideation while maintaining a high bar for quality and craft.</p>
+
+    <blockquote>
+      <p>"Lara is a Figma and design system master. The quality and level of detail was unlike anything I have seen delivered to a client. It is a gold standard that I still reference back to on my subsequent projects."</p>
+      <cite>Feedback from Product Designer</cite>
+    </blockquote>
+
+    <p>The mentors who helped shape my craft as a designer have had a lasting impact on my career, and I enjoy paying it forward by mentoring junior designers in their own growth and development.</p>
+
+    <h2>As a leader</h2>
+    <p>My leadership philosophy is to clear a path for good work to happen. That means clearly communicated expectations, documented decisions, and defined agendas.</p>
+    <p>When I stepped in as design lead for a Fortune 100 client project, I inherited a tight timeline and a team dynamic that needed resetting. I introduced decision-making practices to cut swirl, moved sprint work into Jira for transparency, and committed to showing up consistently for the team. I identified growth opportunities for the designers on my team and advocated for them to leadership.</p>
+    <p>The results: We delivered the end-to-end experience in half the time typically recommended for this type of work, with team morale high. My impact was recognized with a Client Hero Award through the client's RISE program, a distinction reflecting the strength of relationships built and leadership impact. Our work was roadshow-ed with pride across the project.</p>
+
+    <blockquote>
+      <p>"Lara has excelled in every aspect of project leadership. She created an ideal working environment to produce excellent work as well as make the workplace enjoyable. Her designers and clients trust her implicitly."</p>
+      <cite>Feedback from Design Manager</cite>
+    </blockquote>
+
+    <h2>As a strategic thinker</h2>
+    <p>While designing an error management tool, I saw an opportunity to use the error resolution data to uncover insights including common error types, resolution methods, and error spikes.</p>
+    <p>Recognizing the strategic value of these insights for future process enhancements, I created a conceptual prototype and proposed it to client leadership. Although it was outside the original project scope, leadership saw enough value to reallocate funding and move the initiative forward.</p>
+
+    <h2>As a cross-functional collaborator</h2>
+    <p>I've worked alongside incredible product managers, solution architects, content strategists, legal, risk &amp; compliance representatives, and client stakeholders. I believe that good collaboration is built on shared goals, clear roles, open communication, mutual trust, accountability, respect for each others' time and expertise, and early stakeholder involvement.</p>
+
+    <blockquote>
+      <p>"Beyond delivering high-quality design, Lara brings a strong collaborative spirit. She builds effective relationships across disciplines, raises concerns when needed, and consistently holds herself accountable for the work. She contributes as a designer in many ways, not only pushing the work but also coaching and influencing the broader team."</p>
+      <cite>Feedback from Associate Design Director</cite>
+    </blockquote>
   </section>
+
+  <p class="back-to-top"><a href="#top">&uarr; Back to top</a></p>
 
   <footer class="site">
     <div class="wrap">
-      <span>&copy; 2026 Lara Lontoc McKinney</span>
+      <span>Last updated July 2026</span>
       <span><a href="http://www.linkedin.com/in/lara-lontoc-mckinney">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="mailto:llontoc17@gmail.com">Email</a></span>
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('a[href="#top"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
