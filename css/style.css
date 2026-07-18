@@ -65,12 +65,15 @@ header.site .name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; 
 nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 
 /* Hero */
-.hero { padding: 80px 0 60px; }
+.hero { min-height: 70vh; display: flex; align-items: center; padding: 60px 0; }
+.hero .wrap { width: 100%; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); max-width: 34ch; }
 .hero p { color: var(--muted); max-width: 65ch; font-size: 1.1rem; }
 
+.section-title { font-size: 1.5rem; margin: 0; }
+
 /* Tag filter */
-.tag-filter { padding: 40px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-filter { padding: 24px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-btn {
   font-family: inherit;
   font-size: 0.85rem;
@@ -141,6 +144,110 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 }
 .page blockquote p { margin: 0 0 8px; }
 .page blockquote cite { display: block; font-style: normal; color: var(--muted); font-size: 0.85rem; }
+
+/* Expand/collapse panels ("As a ___" sections) */
+.panel {
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px 32px;
+  margin: 24px 0;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.panel:hover, .panel:focus-visible { border-color: var(--accent); }
+.panel:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.panel-header h2 { margin: 0; flex: 1; }
+.panel-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+.panel-icon svg { width: 100%; height: 100%; display: block; }
+.panel-arrow {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+.panel-arrow svg { width: 100%; height: 100%; display: block; }
+.panel.expanded .panel-arrow { transform: rotate(180deg); }
+.panel-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.panel.expanded .panel-content { grid-template-rows: 1fr; }
+.panel-content-inner { overflow: hidden; min-height: 0; }
+.panel-content-inner blockquote:first-child,
+.panel-content-inner p:first-child { margin-top: 20px; }
+.panel-content-inner p:last-child { margin-bottom: 0; }
+
+/* Highlights card */
+.highlights-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.highlights-card li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.highlights-card li:hover { border-color: var(--accent); transform: translateY(-2px); }
+.highlights-card li {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.highlights-card li:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.highlight-icon {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 12px;
+  flex: 0 0 auto;
+  color: var(--highlight-color, var(--accent));
+}
+.highlight-icon svg { width: 100%; height: 100%; display: block; }
+
+/* Highlight color — shared by icon color and confetti */
+.highlights-card li { --highlight-color: #F7B32B; }
+
+@media (max-width: 700px) {
+  .highlights-card ul { grid-template-columns: 1fr; }
+}
+
+/* Confetti burst */
+.confetti-piece {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 1px;
+  animation: confetti-burst 700ms ease-out forwards;
+}
+@keyframes confetti-burst {
+  0% { transform: translate(var(--x0), var(--y0)) rotate(0deg); opacity: 1; }
+  100% { transform: translate(var(--x1), var(--y1)) rotate(var(--r)); opacity: 0; }
+}
 
 /* Case study cross-links */
 .more-case-studies { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
@@ -228,5 +335,5 @@ footer.site {
 footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
 @media (max-width: 600px) {
-  .hero { padding: 50px 0 40px; }
+  .hero { min-height: 60vh; padding: 40px 0; }
 }
