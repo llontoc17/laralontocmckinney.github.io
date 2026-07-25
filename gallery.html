@@ -25,32 +25,67 @@
     <div class="gallery-grid">
       <figure class="gallery-item">
         <figcaption>Concept sketching studies</figcaption>
-        <div class="gallery-thumb" aria-hidden="true"></div>
+        <div class="case-carousel">
+          <div class="case-carousel-viewport">
+            <div class="case-carousel-track">
+              <img class="case-image" src="images/gallery/Conceptsketching%20studies_1.png" alt="Concept sketching studies, page 1">
+              <img class="case-image" src="images/gallery/Conceptsketching%20studies_2.png" alt="Concept sketching studies, page 2">
+              <img class="case-image" src="images/gallery/Conceptsketching%20studies_3.png" alt="Concept sketching studies, page 3">
+              <img class="case-image" src="images/gallery/Conceptsketching%20studies_4.png" alt="Concept sketching studies, page 4">
+            </div>
+          </div>
+          <button type="button" class="case-carousel-arrow case-carousel-prev" aria-label="Previous image">&#8249;</button>
+          <button type="button" class="case-carousel-arrow case-carousel-next" aria-label="Next image">&#8250;</button>
+          <div class="case-carousel-dots">
+            <button type="button" class="case-carousel-dot active" aria-label="Show image 1"></button>
+            <button type="button" class="case-carousel-dot" aria-label="Show image 2"></button>
+            <button type="button" class="case-carousel-dot" aria-label="Show image 3"></button>
+            <button type="button" class="case-carousel-dot" aria-label="Show image 4"></button>
+          </div>
+        </div>
       </figure>
       <figure class="gallery-item">
         <figcaption>Conceptual parking app design and video</figcaption>
-        <div class="gallery-thumb" aria-hidden="true"></div>
+        <video class="gallery-video" src="images/gallery/dub_video.mov" controls preload="metadata"></video>
       </figure>
       <figure class="gallery-item">
         <figcaption>Cross Out Cancer 5k logo</figcaption>
-        <div class="gallery-thumb" aria-hidden="true"></div>
+        <img class="case-image" src="images/gallery/Cross%20Out%20Cancer%205k%20logo.png" alt="Cross Out Cancer 5k logo">
       </figure>
       <figure class="gallery-item">
         <figcaption>Conceptual wireframe with custom illustrations for startup</figcaption>
-        <div class="gallery-thumb" aria-hidden="true"></div>
+        <img class="case-image" src="images/gallery/Conceptual%20wireframe%20with%20custom%20illustrations%20for%20startup.png" alt="Conceptual wireframe with custom illustrations for startup">
       </figure>
       <figure class="gallery-item">
         <figcaption>Crochet projects</figcaption>
-        <div class="gallery-thumb" aria-hidden="true"></div>
+        <img class="case-image" src="images/gallery/crochet%20samples.png" alt="Crochet samples: blanket, bag, and stuffed animal">
       </figure>
       <figure class="gallery-item">
         <figcaption>Blood donation educational pamphlet</figcaption>
-        <div class="gallery-thumb" aria-hidden="true"></div>
+        <div class="case-carousel" id="carousel-blood-donation">
+          <div class="case-carousel-viewport">
+            <div class="case-carousel-track">
+              <img class="case-image" src="images/gallery/Blood%20donation%20educational%20pamphlet1.png" alt="Blood donation educational pamphlet, page 1">
+              <img class="case-image" src="images/gallery/Blood%20donation%20educational%20pamphlet2.png" alt="Blood donation educational pamphlet, page 2">
+            </div>
+          </div>
+          <button type="button" class="case-carousel-arrow case-carousel-prev" aria-label="Previous image">&#8249;</button>
+          <button type="button" class="case-carousel-arrow case-carousel-next" aria-label="Next image">&#8250;</button>
+          <div class="case-carousel-dots">
+            <button type="button" class="case-carousel-dot active" aria-label="Show image 1"></button>
+            <button type="button" class="case-carousel-dot" aria-label="Show image 2"></button>
+          </div>
+        </div>
       </figure>
     </div>
   </section>
 
   <p class="back-to-top"><a href="#top">&uarr; Back to top</a></p>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" aria-label="Close image">&times;</button>
+    <img class="lightbox-img" src="" alt="">
+  </div>
 
   <footer class="site">
     <div class="wrap">
@@ -67,5 +102,6 @@
       });
     });
   </script>
+  <script src="js/case-media.js" defer></script>
 </body>
 </html>

@@ -47,8 +47,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 header.site {
   border-bottom: 1px solid var(--line);
   padding: 24px 0;
-}
-body.subpage header.site {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -101,7 +99,7 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-.project-thumb { width: 100%; aspect-ratio: 1 / 1; background: var(--line); }
+.project-thumb { width: 100%; aspect-ratio: 1 / 1; background: var(--line); display: block; object-fit: cover; }
 .project-info { min-width: 0; padding: 20px; }
 .project-card h3 { font-size: 1.7rem; margin-bottom: 4px; }
 .project-card .date { color: var(--muted); font-size: 0.9rem; margin: 0 0 10px; }
@@ -272,10 +270,18 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-.related-thumb { flex: 0 0 80px; width: 80px; height: 80px; aspect-ratio: 1 / 1; background: var(--line); border-radius: 4px; }
+.related-thumb { flex: 0 0 80px; width: 80px; height: 80px; aspect-ratio: 1 / 1; background: var(--line); border-radius: 4px; object-fit: cover; display: block; }
 .related-info { min-width: 0; }
 .related-info h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; margin: 0 0 4px; }
-.related-info .date { color: var(--muted); font-size: 0.8rem; margin: 0 0 6px; }
+.related-info .date {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 6px;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-transform: none;
+}
 .related-info .tags {
   list-style: none;
   display: flex;
@@ -300,6 +306,11 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 .gallery-item { margin: 0; }
 .gallery-item figcaption { font-family: 'Space Grotesk', sans-serif; font-weight: 500; margin-bottom: 12px; }
 .gallery-thumb { width: 100%; aspect-ratio: 16 / 9; background: var(--line); border-radius: 4px; }
+.gallery-item .case-image,
+.gallery-item .case-carousel,
+.gallery-item .case-image-row,
+.gallery-item .gallery-video { margin-top: 0; }
+.gallery-video { width: 100%; border-radius: 4px; display: block; }
 
 /* Back to top / Back to all projects */
 .back-to-top { max-width: 1080px; margin: 0 auto; padding: 0 24px 40px; text-align: center; }
@@ -325,6 +336,102 @@ body.subpage .back-to-top { max-width: 756px; }
   font-style: italic;
   margin-top: 24px;
 }
+.case-image {
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 24px;
+  display: block;
+  cursor: zoom-in;
+}
+.case-image--outlined { outline: 1px solid #9a9a9a; outline-offset: -1px; }
+.case-image-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+.case-image-row .case-image { margin-top: 0; }
+.case-image-row .case-figure { flex: 1; margin: 0; }
+.case-figure { margin: 24px 0 0; }
+.case-figure .case-image { margin-top: 0; }
+.case-caption {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+@media (max-width: 700px) {
+  .case-image-row { flex-direction: column; }
+}
+
+/* Case study image carousel */
+.case-carousel { margin-top: 24px; position: relative; }
+.case-carousel-viewport { overflow: hidden; border-radius: 4px; }
+.case-carousel-track { display: flex; height: 100%; transition: transform 0.3s ease; }
+.case-carousel-track .case-image { flex: 0 0 100%; width: 100%; height: 100%; object-fit: contain; margin-top: 0; }
+.case-carousel--peek .case-carousel-track .case-image { flex: 0 0 auto; width: auto; height: 100%; object-fit: initial; margin-right: 16px; }
+.case-carousel-track .case-image.case-image--fit-height { flex: 0 0 auto; width: auto; height: 100%; object-fit: initial; }
+.case-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.case-carousel-arrow:hover { border-color: var(--accent); color: var(--accent); }
+.case-carousel-prev { left: 12px; }
+.case-carousel-next { right: 12px; }
+.case-carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+.case-carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--line);
+  cursor: pointer;
+}
+.case-carousel-dot.active { background: var(--accent); }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 23, 27, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-img { max-width: 100%; max-height: 100%; border-radius: 4px; cursor: default; }
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.2); }
 
 footer.site {
   border-top: 1px solid var(--line);

@@ -22,9 +22,11 @@
   <section class="page wrap">
     <div class="case-header">
       <h1>Executive reporting dashboard</h1>
-      <p class="eyebrow">Product design, design system, data visualization, AI use case</p>
-      <p class="meta">March 2023 &nbsp;&middot;&nbsp; Product Designer</p>
+      <p class="eyebrow">Product design, design system, data visualization, AI use case, user research</p>
+      <p class="meta">March 2023 &nbsp;&middot;&nbsp; Product Designer &nbsp;&middot;&nbsp; Global quick service restaurant</p>
     </div>
+
+    <img class="case-image" src="../images/executive%20reporting%20dashboard/executivereportingdashboard_cover.png" alt="Executive reporting dashboard cover image">
 
     <h2>Project Summary</h2>
     <p>The Quick Service Restaurant (QSR) serves more than 70 million customers daily across 39,000 locations in over 100 markets. Despite this scale, executives relied on multiple reports that took weeks to manually compile.</p>
@@ -63,14 +65,27 @@
     <h3>What we found</h3>
     <p>Executives valued seeing the real numbers themselves, not an interpretation of them. What mattered most was confidence in accuracy, so they could apply the data to whatever question was in front of them at the time. Sometimes the high-level KPIs were all they needed; other times, they needed a more detailed breakdown of the metrics behind them. We found they leaned on specific aggregations, like top 10 markets, to support their analysis.</p>
     <p>We also discovered that while the company had a mature customer-facing design system, there were not yet any UI standards for internal tools or data visualization.</p>
-    <div class="placeholder">Figma synthesis</div>
 
     <h2>Detailed Design</h2>
     <h3>Designing for executives</h3>
     <p>We organized the experience into three levels of detail: an executive summary, visual breakdowns of each KPI, and the ability to download source data.</p>
     <p>The executive summary gave leaders the whole picture of the business at a glance, across every KPI. Each KPI breakdown showed performance over time, with filters to adjust the view. And to keep that confidence intact at every level, we surfaced the last-updated timestamp and active filters alongside each visualization — so it was always clear exactly what they were looking at: this data, as of this date, at this frequency, in this market.</p>
     <p>Links to source data added one more layer of reassurance, and gave the few executives who wanted to work directly with the raw numbers a way to do that too.</p>
-    <div class="placeholder">KPI breakdown</div>
+    <div class="case-carousel">
+      <div class="case-carousel-viewport">
+        <div class="case-carousel-track">
+          <img class="case-image" src="../images/executive%20reporting%20dashboard/executivereportingdashboard_marketshare.png" alt="Executive reporting dashboard market share KPI breakdown">
+          <img class="case-image case-image--fit-height" src="../images/executive%20reporting%20dashboard/executivereportingdashboard_mobile.png" alt="Executive reporting dashboard mobile responsive view">
+        </div>
+      </div>
+      <button type="button" class="case-carousel-arrow case-carousel-prev" aria-label="Previous image">&#8249;</button>
+      <button type="button" class="case-carousel-arrow case-carousel-next" aria-label="Next image">&#8250;</button>
+      <div class="case-carousel-dots">
+        <button type="button" class="case-carousel-dot active" aria-label="Show image 1"></button>
+        <button type="button" class="case-carousel-dot" aria-label="Show image 2"></button>
+      </div>
+      <p class="case-caption">KPI breakdown page</p>
+    </div>
 
     <h3>Identifying an AI use case</h3>
     <p>While executives wanted to be able to interpret the data themselves, they also liked the idea of a headline — a sentence or two they could quickly check each morning to get an idea of what's changed. This was a great opportunity for an AI-generated summary. Although it ultimately fell outside the project's scope, stakeholders saved the concept for future releases.</p>
@@ -86,44 +101,28 @@
       <ul class="related-list">
         <li>
           <a class="related-card" href="error-management-system.html">
-            <div class="related-thumb" aria-hidden="true"></div>
+            <img class="related-thumb" src="../images/error%20management/errormanagement_cover.png" alt="Error management system cover image">
             <div class="related-info">
               <h3>Error management system</h3>
-              <p class="date">March 2025</p>
-              <ul class="tags">
-                <li>Product design</li>
-                <li>Service design</li>
-                <li>Dashboard design</li>
-                <li>Data visualization</li>
-              </ul>
+              <p class="date">March 2025 &nbsp;&middot;&nbsp; Lead Product Designer &nbsp;&middot;&nbsp; Fortune 100 financial services</p>
             </div>
           </a>
         </li>
         <li>
           <a class="related-card" href="retirement-education-tool.html">
-            <div class="related-thumb" aria-hidden="true"></div>
+            <img class="related-thumb" src="../images/retirement%20education%20tool/retirementeducationtool_cover.png" alt="Retirement education tool cover image">
             <div class="related-info">
               <h3>Retirement education tool</h3>
-              <p class="date">April 2026</p>
-              <ul class="tags">
-                <li>Product design</li>
-                <li>Project management</li>
-                <li>AI concept</li>
-              </ul>
+              <p class="date">April 2026 &nbsp;&middot;&nbsp; Lead Product Designer &nbsp;&middot;&nbsp; Fortune 100 financial services</p>
             </div>
           </a>
         </li>
         <li>
           <a class="related-card" href="home-efficiency-rebate-program.html">
-            <div class="related-thumb" aria-hidden="true"></div>
+            <img class="related-thumb" src="../images/home%20efficiency%20rebate%20program/homeefficiency_cover.png" alt="Home-efficiency rebate program cover image">
             <div class="related-info">
               <h3>Home-efficiency rebate program</h3>
-              <p class="date">July 2024</p>
-              <ul class="tags">
-                <li>Service design</li>
-                <li>Design research</li>
-                <li>Illustrations</li>
-              </ul>
+              <p class="date">July 2024 &nbsp;&middot;&nbsp; Service Designer &nbsp;&middot;&nbsp; Public services, environmental services</p>
             </div>
           </a>
         </li>
@@ -134,6 +133,11 @@
 
   <p class="back-to-top back-to-projects"><a href="../index.html">&larr; Back to all projects</a></p>
 
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" aria-label="Close image">&times;</button>
+    <img class="lightbox-img" src="" alt="">
+  </div>
+
   <footer class="site">
     <div class="wrap">
       <span>Last updated July 2026</span>
@@ -143,5 +147,6 @@
 
   <script src="../js/confetti.js" defer></script>
   <script src="../js/highlights.js" defer></script>
+  <script src="../js/case-media.js" defer></script>
 </body>
 </html>
