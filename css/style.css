@@ -168,6 +168,8 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 /* Generic page content */
 /* Main content on every page except home is narrowed to 70% of the home page width, independent of the header/footer wrap */
 .page { padding-top: 60px; padding-bottom: 80px; max-width: 756px; }
+.page-wide { max-width: 1080px; }
+.page-wide p a { display: inline-flex; align-items: center; gap: 6px; }
 .page h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .case-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px; }
 .case-header h1 { margin: 0; }
@@ -379,13 +381,6 @@ body.subpage .back-to-top { max-width: 756px; }
   font-style: italic;
   margin-top: 24px;
 }
-.resume-embed {
-  width: 100%;
-  height: 85vh;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  margin-top: 12px;
-}
 .case-image {
   width: 100%;
   border-radius: 4px;
@@ -394,6 +389,7 @@ body.subpage .back-to-top { max-width: 756px; }
   cursor: zoom-in;
 }
 .case-image--outlined { outline: 1px solid #9a9a9a; outline-offset: -1px; }
+.case-image--static { cursor: default; }
 .case-image-row {
   display: flex;
   gap: 16px;
