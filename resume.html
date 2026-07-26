@@ -10,7 +10,10 @@
   <header class="site" id="top">
     <div class="wrap">
       <a class="name" href="index.html">Lara Lontoc McKinney</a>
-      <nav class="main">
+      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main" id="main-nav">
       <a href="index.html">Home</a>
       <a href="about-me.html">About</a>
       <a href="resume.html" aria-current="page">Resume</a>
@@ -21,7 +24,8 @@
 
   <section class="page wrap">
     <h1>Resume</h1>
-    <div class="placeholder">Paste your resume content here from Lara_Portfolio_Content.docx.</div>
+    <p><a href="images/lara_mckinney_resume.pdf" target="_blank" rel="noopener">Open resume PDF in a new tab</a></p>
+    <embed class="resume-embed" src="images/lara_mckinney_resume.pdf" type="application/pdf">
   </section>
 
   <p class="back-to-top"><a href="#top">&uarr; Back to top</a></p>
@@ -41,5 +45,6 @@
       });
     });
   </script>
+  <script src="js/nav.js" defer></script>
 </body>
 </html>

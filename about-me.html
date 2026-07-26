@@ -10,7 +10,10 @@
   <header class="site" id="top">
     <div class="wrap">
       <a class="name" href="index.html">Lara Lontoc McKinney</a>
-      <nav class="main">
+      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main" id="main-nav">
       <a href="index.html">Home</a>
       <a href="about-me.html" aria-current="page">About</a>
       <a href="resume.html">Resume</a>
@@ -92,6 +95,7 @@
   </footer>
 
   <script src="js/panels.js" defer></script>
+  <script src="js/nav.js" defer></script>
   <script>
     document.querySelectorAll('a[href="#top"]').forEach((link) => {
       link.addEventListener('click', (e) => {
