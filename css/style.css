@@ -114,7 +114,7 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 
 .section-title { font-size: 1.5rem; margin: 0; }
 
-.hobbies-heading { display: flex; align-items: center; gap: 16px; }
+.hobbies-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .see-more-btn {
   display: inline-flex;
   align-items: center;
@@ -234,7 +234,7 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 }
 
 /* Home quote */
-.home-quote { padding-top: 24px; padding-bottom: 60px; text-align: center; }
+.home-quote { padding-top: 60px; padding-bottom: 100px; text-align: center; }
 .home-quote-icon {
   display: block;
   width: 32px;
@@ -641,7 +641,7 @@ footer.site {
   font-size: 0.85rem;
 }
 footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.sign-off { margin: 0; padding: 24px 24px; text-align: center; text-transform: lowercase; }
+.sign-off { margin: 0; padding: 60px 24px; text-align: center; text-transform: lowercase; }
 
 @media (max-width: 600px) {
   .hero { min-height: 60vh; padding: 40px 0; }
