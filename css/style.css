@@ -18,6 +18,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -34,7 +35,7 @@ h1, h2, h3, .display {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  margin: 0 0 0.5em;
+  margin: 0 0 22px;
 }
 
 a { color: var(--ink); text-decoration: none; transition: color 0.1s ease; }
@@ -131,10 +132,27 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 .filter-count { margin: 16px 0 0; color: var(--muted); font-size: 0.85rem; }
 
 /* Project grid */
-.projects { padding: 24px 0 60px; display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
+.projects {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  padding: 24px 0 30px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-left: max(24px, calc((100vw - 1080px) / 2 + 24px));
+  padding-right: max(24px, calc((100vw - 1080px) / 2 + 24px));
+}
+.projects::-webkit-scrollbar { display: none; }
 .project-card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 calc((min(100vw, 1080px) - 48px - 24px) / 2);
+  scroll-snap-align: start;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -164,11 +182,11 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 .project-card .tags li:not(:last-child)::after { content: ","; }
 
 @media (max-width: 600px) {
-  .projects { grid-template-columns: 1fr; }
+  .project-card { flex-basis: calc((100vw - 48px) * 8 / 9); }
 }
 
 /* Home quote */
-.home-quote { padding: 40px 0 100px; text-align: center; }
+.home-quote { padding: 24px 0 60px; text-align: center; }
 .home-quote-icon {
   display: block;
   width: 32px;
@@ -203,6 +221,9 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 .home-quote-track { display: grid; min-width: 0; }
 .home-quote-slide {
   grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 0;
   opacity: 0;
   visibility: hidden;
@@ -225,13 +246,35 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
   font-size: 0.9rem;
   color: var(--muted);
 }
+.home-quote-block p.home-quote-award-title { margin: 0 0 2px; line-height: 1.2; }
+.home-quote-date {
+  display: block;
+  font-style: normal;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.home-quote-highlight {
+  background: #cfe8fb;
+  color: inherit;
+  padding: 0 2px;
+}
+.home-quote-body-copy {
+  display: block;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
 /* Generic page content */
 /* Main content on every page except home is narrowed to 70% of the home page width, independent of the header/footer wrap */
 .page { padding-top: 60px; padding-bottom: 80px; max-width: 756px; }
 .page-wide { max-width: 1080px; }
 .page-wide p a { display: inline-flex; align-items: center; gap: 6px; }
 .page h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
-.case-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 16px; }
+.case-header { display: flex; flex-direction: column; gap: 2px; margin-bottom: 16px; }
 .case-header h1 { margin: 0; }
 .case-header .eyebrow { margin: 0; }
 .case-header .meta { margin: 0; color: var(--muted); }
@@ -312,6 +355,7 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  font-size: 16px;
   transition: border-color 0.1s ease, transform 0.1s ease;
 }
 .highlights-card li:hover { border-color: var(--accent); transform: translateY(-2px); }
@@ -419,7 +463,7 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 
 /* Back to top / Back to all projects */
 .back-to-top { max-width: 1080px; margin: 0 auto; padding: 0 24px 40px; text-align: center; }
-.back-to-top.back-to-projects { text-align: left; }
+.back-to-top.back-to-projects { text-align: left; padding: 32px 24px 0; }
 body.subpage .back-to-top { max-width: 756px; }
 .back-to-top a {
   display: inline-flex;
@@ -433,6 +477,7 @@ body.subpage .back-to-top { max-width: 756px; }
   transition: border-color 0.1s ease, color 0.1s ease;
 }
 .back-to-top a:hover { border-color: var(--accent); color: var(--accent); }
+.back-to-projects a { border: none; border-radius: 0; padding: 0; }
 .placeholder {
   border: 1px dashed var(--line);
   border-radius: 4px;
@@ -480,8 +525,8 @@ body.subpage .back-to-top { max-width: 756px; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;

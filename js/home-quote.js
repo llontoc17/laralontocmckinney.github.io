@@ -25,36 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, FADE_MS + HOLD_MS);
   }
 
-  let timer = null;
-  function startAutoplay() {
-    timer = setInterval(() => {
-      goTo((index + 1) % slides.length);
-    }, 8000);
-  }
-  function resetAutoplay() {
-    clearInterval(timer);
-    startAutoplay();
-  }
-
   prevBtn.addEventListener('click', () => {
     goTo((index - 1 + slides.length) % slides.length);
-    resetAutoplay();
   });
   nextBtn.addEventListener('click', () => {
     goTo((index + 1) % slides.length);
-    resetAutoplay();
   });
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       goTo(i);
-      resetAutoplay();
     });
   });
-
-  carousel.addEventListener('mouseenter', () => clearInterval(timer));
-  carousel.addEventListener('mouseleave', startAutoplay);
-  carousel.addEventListener('focusin', () => clearInterval(timer));
-  carousel.addEventListener('focusout', startAutoplay);
-
-  startAutoplay();
 });
