@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lara Lontoc McKinney — Product Designer</title>
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=14">
 </head>
 <body>
   <header class="site" id="top">
@@ -17,7 +17,7 @@
       <a href="index.html" aria-current="page">Home</a>
       <a href="about-me/">About</a>
       <a href="resume/">Resume</a>
-      <a href="gallery/">Gallery</a>
+      <a href="hobby-gallery/">Hobby gallery</a>
       </nav>
     </div>
   </header>
@@ -40,7 +40,6 @@
       <button type="button" class="tag-btn" data-tag="project-management">Project management</button>
       <button type="button" class="tag-btn" data-tag="ai-concept">AI concept</button>
       <button type="button" class="tag-btn" data-tag="design-system">Design system</button>
-      <button type="button" class="tag-btn" data-tag="design-research">Design research</button>
       <button type="button" class="tag-btn" data-tag="illustrations">Illustrations</button>
       <button type="button" class="tag-btn" data-tag="user-research">User research</button>
     </div>
@@ -107,7 +106,7 @@
         <div class="home-quote-slide">
           <blockquote class="home-quote-block">
             <span class="home-quote-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
-            <p class="home-quote-award-title">1st place in Accenture Midwest Innovation Challenge</p>
+            <p class="home-quote-award-title home-quote-copy-lg">1st place in Accenture Midwest Innovation Challenge</p>
             <span class="home-quote-date">March 2023</span>
             <cite class="home-quote-body-copy">Ranked 1st out of 29 projects in Accenture's Midwest Innovation Challenge for work on a global quick service restaurant's executive reporting dashboard</cite>
           </blockquote>
@@ -138,7 +137,37 @@
     </div>
   </section>
 
-  <p class="back-to-top"><a href="#top">&uarr; Back to top</a></p>
+  <section class="wrap hobbies">
+    <div class="hobbies-heading">
+      <h2 class="section-title">Hobby gallery</h2>
+      <a class="see-more-btn" href="hobby-gallery/">See all &rarr;</a>
+    </div>
+    <div class="hobbies-grid">
+      <figure class="gallery-item">
+        <img class="case-image" src="images/gallery/Conceptsketching%20studies_4.png" alt="Concept sketching study, page 4">
+      </figure>
+      <figure class="gallery-item">
+        <img class="case-image" src="images/gallery/Conceptsketching%20studies_2.png" alt="Concept sketching study, page 2">
+      </figure>
+      <figure class="gallery-item">
+        <div class="video-wrap">
+          <video class="gallery-video" src="images/gallery/dub_video.mov" controls preload="metadata"></video>
+          <button type="button" class="video-expand-btn" aria-label="View video full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button>
+        </div>
+      </figure>
+      <figure class="gallery-item">
+        <img class="case-image" src="images/gallery/crochet%20samples.png" alt="Crochet samples: blanket, bag, and stuffed animal">
+      </figure>
+      <figure class="gallery-item">
+        <img class="case-image" src="images/gallery/Blood%20donation%20educational%20pamphlet2.png" alt="Blood donation educational pamphlet, page 2">
+      </figure>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" aria-label="Close image">&times;</button>
+    <img class="lightbox-img" src="" alt="">
+  </div>
 
   <footer class="site">
     <div class="wrap">
@@ -146,6 +175,8 @@
       <span><a href="http://www.linkedin.com/in/lara-lontoc-mckinney">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="mailto:llontoc17@gmail.com">Email</a></span>
     </div>
   </footer>
+
+  <p class="sign-off">thanks for stopping by :)</p>
 
   <script>
     const tagButtons = document.querySelectorAll('.tag-btn');
@@ -196,20 +227,15 @@
         });
 
         updateCount();
+        document.querySelector('.projects').scrollTo({ left: 0 });
         window.scrollTo(0, scrollY);
       });
     });
 
     updateCount();
-
-    document.querySelectorAll('a[href="#top"]').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
   </script>
   <script src="js/nav.js" defer></script>
-  <script src="js/home-quote.js?v=2" defer></script>
+  <script src="js/home-quote.js?v=3" defer></script>
+  <script src="js/case-media.js?v=2" defer></script>
 </body>
 </html>

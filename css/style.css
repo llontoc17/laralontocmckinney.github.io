@@ -114,6 +114,54 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 
 .section-title { font-size: 1.5rem; margin: 0; }
 
+.hobbies-heading { display: flex; align-items: center; gap: 16px; }
+.see-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--muted);
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  transition: color 0.1s ease;
+}
+.see-more-btn:hover { color: var(--accent); }
+
+/* Hobbies */
+.hobbies { padding-top: 24px; padding-bottom: 60px; }
+.hobbies-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+.hobbies-grid .case-image,
+.hobbies-grid .gallery-video {
+  margin-top: 0;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.video-wrap { position: relative; }
+.video-expand-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+.video-expand-btn:hover { background: rgba(0, 0, 0, 0.75); }
+.video-expand-btn svg { width: 16px; height: 16px; display: block; }
+
 /* Tag filter */
 .tag-filter { padding: 24px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-btn {
@@ -186,7 +234,7 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
 }
 
 /* Home quote */
-.home-quote { padding: 24px 0 60px; text-align: center; }
+.home-quote { padding-top: 24px; padding-bottom: 60px; text-align: center; }
 .home-quote-icon {
   display: block;
   width: 32px;
@@ -227,7 +275,7 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
   min-width: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s;
+  transition: opacity 0.2s ease, visibility 0.2s;
 }
 .home-quote-slide.is-active { opacity: 1; visibility: visible; }
 .home-quote-block {
@@ -264,10 +312,11 @@ nav.main { display: flex; gap: 24px; font-size: 0.95rem; }
   display: block;
   font-family: 'IBM Plex Sans', system-ui, sans-serif;
   font-style: normal;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--ink);
 }
+.home-quote-block .home-quote-copy-lg { font-size: 20px; }
 /* Generic page content */
 /* Main content on every page except home is narrowed to 70% of the home page width, independent of the header/footer wrap */
 .page { padding-top: 60px; padding-bottom: 80px; max-width: 756px; }
@@ -568,6 +617,7 @@ body.subpage .back-to-top { max-width: 756px; }
 }
 .lightbox[hidden] { display: none; }
 .lightbox-img { max-width: 100%; max-height: 100%; border-radius: 4px; cursor: default; }
+.lightbox-video { max-width: 100%; max-height: 100%; border-radius: 4px; cursor: default; }
 .lightbox-close {
   position: absolute;
   top: 24px;
@@ -591,6 +641,7 @@ footer.site {
   font-size: 0.85rem;
 }
 footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.sign-off { margin: 0; padding: 24px 24px; text-align: center; text-transform: lowercase; }
 
 @media (max-width: 600px) {
   .hero { min-height: 60vh; padding: 40px 0; }

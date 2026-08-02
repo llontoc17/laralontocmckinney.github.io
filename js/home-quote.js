@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let index = slides.findIndex((slide) => slide.classList.contains('is-active'));
   if (index < 0) index = 0;
 
-  const FADE_MS = 400;
-  const HOLD_MS = 200;
+  const FADE_MS = 200;
+  const HOLD_MS = 80;
   let isAnimating = false;
 
   function goTo(nextIndex) {
